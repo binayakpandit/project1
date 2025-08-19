@@ -161,10 +161,21 @@
     <h1>🚀 Reconity</h1>
     <p class="tagline">All-in-One Cybersecurity & Recon Platform — Coming Soon</p>
 
-    <div class="email-box">
-      <input type="email" placeholder="Enter your email" aria-label="email">
-      <button type="button">Notify Me</button>
-    </div>
+ <div class="email-box">
+  <input type="email" id="userEmail" placeholder="Enter your email" aria-label="email">
+  <button type="button" onclick="sendMail()">Notify Me</button>
+</div>
+
+<script>
+function sendMail() {
+  const userEmail = document.getElementById("userEmail").value;
+  if (userEmail) {
+    window.location.href = `mailto:admin@reconity.tech?subject=New%20Signup&body=User%20Email:%20${encodeURIComponent(userEmail)}`;
+  } else {
+    alert("Please enter your email first!");
+  }
+}
+</script>
 
     <div class="partners">
       <p>📧 Contact for Partnership: <a href="mailto:admin@reconity.tech">admin@reconity.tech</a></p>
